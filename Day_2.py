@@ -13,4 +13,4 @@ bill_per_person = total_bill / people
 final_amount = round(bill_per_person, 2)
 
 
-print(f"Each person should pay: ${final_amount}")
+print(f"Each person should make payment of: ${final_amount}")

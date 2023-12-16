@@ -10,7 +10,21 @@ nr_symbols = int(input(f"How many symbols would you like?\n"))
 nr_numbers = int(input(f"How many numbers would you like?\n"))
 
 #Eazy Level - Order not randomised:
-password = " "
+# password = " "
+# for char in range(1,nr_letters+1):
+#     password+=random.choice(letters)
+
+# for char in range(1,nr_symbols+1):
+#     password+=random.choice(symbols)
+    
+# for char in range(1,nr_numbers+1):
+#     password+=random.choice(numbers)
+    
+# print(password)
+
+
+#Hard Level - Order of characters randomised:
+password = []
 for char in range(1,nr_letters+1):
     password+=random.choice(letters)
 
@@ -21,5 +35,10 @@ for char in range(1,nr_numbers+1):
     password+=random.choice(numbers)
     
 print(password)
-#Hard Level - Order of characters randomised:
-#e.g. 4 letter, 2 symbol, 2 number = g^2jk8&P
+random.shuffle(password)
+print(password)
+
+new_password=""
+for pasw in password:
+    new_password+=pasw
+print(f"Your new password is: {new_password}")

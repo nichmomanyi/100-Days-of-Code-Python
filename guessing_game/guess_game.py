@@ -9,27 +9,39 @@
 # Include two different difficulty levels (e.g., 10 guesses in easy mode, only 5 guesses in hard mode).
 
 from art import logo
+from random import randint
 
-print(logo)
+EASY_LEVEL = 5
+HARD_LEVEL = 10
 
-def difficulty ():
-    select_level = print("Do you want to play 'Easy' or 'hard' level?").lower()
-    if select_level == "easy":
-        attempts = 5
-        print ("You have 5 attempts to the game.")
-    elif select_level == "hard":
-        attempts = 10
-        print ("You have 5 attempts to the game.")
+#Function to check user's guess.
+def check_answer (guess, answer):
+    if guess > answer:
+        print ("Too high")
+    elif guess < answer:
+        print ("Too low")
+    else:
+        print(f"You got it. The answer is {answer}.")
+        
+#Function to check difficulty      
+def set_difficulty (): 
+    level = input(print("Do you want to play 'Easy' or 'hard' level?: "))
+    if level == "easy":
+        return EASY_LEVEL
+    else:
+        return HARD_LEVEL
+    
+    
 
+#Choosing a random number between 1 and 100.
+print("Welcome to the Number Guessing Game!")
+print("I'm thinking of a number between 1 and 100.")
 
-actual_number = 20
-guess_number = int(input("Guess a number between 1 and 100"))
-game_on = False
+answer = randint(1, 100)
 
+turns = set_difficulty()
+print(f"You have {turns} attempts remaining to guess the number.")
 
-if guess_number > actual_number:
-    print ("Too high")
-elif guess_number < actual_number:
-    print ("Too low")
-elif guess_number == actual_number:
-    print("You guessed right")
+#Let the user guess a number
+guess = int(input("Guess a number: "))
+

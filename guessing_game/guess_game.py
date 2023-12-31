@@ -32,18 +32,23 @@ def set_difficulty ():
         return HARD_LEVEL
     
     
-
+def game():
 #Choosing a random number between 1 and 100.
-print("Welcome to the Number Guessing Game!")
-print("I'm thinking of a number between 1 and 100.")
+    print("Welcome to the Number Guessing Game!")
+    print("I'm thinking of a number between 1 and 100.")
 
-answer = randint(1, 100)
-print(f"Pssst, The answer is : {answer}")
-turns = set_difficulty()
-print(f"You have {turns} attempts remaining to guess the number.")
+    answer = randint(1, 100)
+    print(f"Pssst, The answer is : {answer}")
+    turns = set_difficulty()
+    print(f"You have {turns} attempts remaining to guess the number.")
 
-#Let the user guess a number
-guess = 0
-while guess != answer:
-    guess = int(input("Guess a number: "))
-    check_answer(guess, answer)
+    #Let the user guess a number
+    guess = 0
+    while guess != answer:
+        guess = int(input("Guess a number: "))
+        check_answer(guess, answer)
+        turns -= 1
+        print(f"You have {turns} turns left")
+        if turns == 0:
+            break
+game()

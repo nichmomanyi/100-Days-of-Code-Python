@@ -25,7 +25,7 @@ def check_answer (guess, answer):
         
 #Function to check difficulty      
 def set_difficulty (): 
-    level = input(print("Do you want to play 'Easy' or 'hard' level?: "))
+    level = input(print("Do you want to play 'Easy' or 'hard' level: "))
     if level == "easy":
         return EASY_LEVEL
     else:
@@ -38,10 +38,12 @@ print("Welcome to the Number Guessing Game!")
 print("I'm thinking of a number between 1 and 100.")
 
 answer = randint(1, 100)
-
+print(f"Pssst, The answer is : {answer}")
 turns = set_difficulty()
 print(f"You have {turns} attempts remaining to guess the number.")
 
 #Let the user guess a number
-guess = int(input("Guess a number: "))
-
+guess = 0
+while guess != answer:
+    guess = int(input("Guess a number: "))
+    check_answer(guess, answer)

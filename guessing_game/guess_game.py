@@ -11,21 +11,26 @@
 from art import logo
 from random import randint
 
-EASY_LEVEL = 5
-HARD_LEVEL = 10
+EASY_LEVEL = 10
+HARD_LEVEL = 5
 
 #Function to check user's guess.
-def check_answer (guess, answer):
+def check_answer (guess, answer, turns):
+    """Checks answer against guess. Returns number of turns remaining"""
     if guess > answer:
         print ("Too high")
+        print("Guess again")
+        return turns - 1
     elif guess < answer:
         print ("Too low")
+        print("Guess again")
+        return turns - 1
     else:
         print(f"You got it. The answer is {answer}.")
         
 #Function to check difficulty      
-def set_difficulty (): 
-    level = input(print("Do you want to play 'Easy' or 'hard' level: "))
+def set_difficulty():
+    level = input("Choose a difficulty. Type 'easy' or 'hard': ")
     if level == "easy":
         return EASY_LEVEL
     else:
@@ -33,6 +38,7 @@ def set_difficulty ():
     
     
 def game():
+    print(logo)
 #Choosing a random number between 1 and 100.
     print("Welcome to the Number Guessing Game!")
     print("I'm thinking of a number between 1 and 100.")
@@ -40,15 +46,14 @@ def game():
     answer = randint(1, 100)
     print(f"Pssst, The answer is : {answer}")
     turns = set_difficulty()
-    print(f"You have {turns} attempts remaining to guess the number.")
-
+    
     #Let the user guess a number
     guess = 0
     while guess != answer:
+        print(f"You have {turns} attempts remaining to guess the number.")
         guess = int(input("Guess a number: "))
-        check_answer(guess, answer)
-        turns -= 1
-        print(f"You have {turns} turns left")
-        if turns == 0:
-            break
+        if turns == 1:
+            print("You run out of guesses, You lose.")
+            return
+        turns = check_answer(guess, answer, turns)
 game()

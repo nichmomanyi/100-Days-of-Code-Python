@@ -11,7 +11,7 @@ def caesar(start_text, shift_amount, cipher_direction):
             end_text += alphabet[new_position]
         else:
             end_text += char
-    print(f"Here's the {cipher_direction}d result: {end_text}")
+    print(f"Here is the {cipher_direction}d result: {end_text}")
 
 from art import logo
 print(logo)

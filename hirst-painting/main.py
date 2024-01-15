@@ -1,7 +1,7 @@
 # import colorgram
 import turtle as t
 import random
-# colors = colorgram.extract('img.jpg', 30)
+# colors = colorgram.extract('img.jpg', 40)
 #
 # rgb_colors = []
 # for color in colors:

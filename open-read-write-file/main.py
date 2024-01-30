@@ -2,8 +2,6 @@
 #     content = file.read()
 #     print(content)
 
-with open ("my_file.txt", "w") as file:
+with open ("/Users/user/Desktop/my_file.txt", "w") as file:
     file.write("\n My name is Nic")
-
-with open ("my_file.txt", "w") as file:
-    file.write("Who are you")
+    print(file)

@@ -1,7 +1,5 @@
-# for number in range(0,11,3):
-#     print (number)
+# numbers = [1,2,3]
+# new_numbers = [number + 1 for number in numbers]
 
-total = 0
-for num in range(1, 101):
-    total += num
-print(total)
+# news = [x*2 for x in range(1,5)]
+# print(news)

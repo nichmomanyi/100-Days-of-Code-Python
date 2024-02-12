@@ -31,4 +31,3 @@ if today_tuple in birthdays_dict:
 
 
 
-

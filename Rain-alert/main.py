@@ -4,6 +4,7 @@ from twilio.rest import Client
 account_sid = "AC39b6ca493feb968b2f527c00fd018bca"
 auth_token = "3174e8c395e4aeeae0867b3813593c96"
 
+
 parameter = {
 
     "lat": -1.284699,

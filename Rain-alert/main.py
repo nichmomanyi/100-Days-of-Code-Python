@@ -30,4 +30,3 @@ if will_rain:
         to="+254715210571"
     )
     print(message.status)
-

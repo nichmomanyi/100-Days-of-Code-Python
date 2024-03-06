@@ -7,7 +7,7 @@ STOCK_ENDPOINT = "https://www.alphavantage.co/query"
 NEWS_ENDPOINT = "https://newsapi.org/v2/everything"
 
 STOCK_API_KEY = "DRD4ZM8FY8S6XMPN"
-
+NEWS_API_KEY = "91a92780e73b4c9fab89fc5d6fc69ffb"
 
 # Get yesterday's closing stock price.
 stock_params = {

@@ -1,4 +1,5 @@
 import requests
+from twilio.rest import  Client
 
 STOCK_NAME = "TSLA"
 COMPANY_NAME = "Tesla inc"
@@ -31,7 +32,7 @@ print(day_before_yesterday_closing_data)
 
 # Find the positive difference between 1 and 2
 difference = abs(float(yesterday_closing_data) - float(day_before_yesterday_closing_data))
-print((difference))
+print(difference)
 
 # The percentage difference
 percentage_difference = (difference / float(yesterday_closing_data)) * 100
@@ -53,12 +54,22 @@ if percentage_difference > 1:
 ## STEP 3: Use twilio.com/docs/sms/quickstart/python
 # to send a separate message with each article's title and description to your phone number.
 
-# TODO 8. - Create a new list of the first 3 article's headline and description using list comprehension.
-formatted_article_list = [f"Headline: {article['title']} \n Brief: {article['description']} " for article in three_articles]
-# TODO 9. - Send each article as a separate message via Twilio.
+# A list of the first 3 article's headline and description using list comprehension.
+formatted_articles = [f"Headline: {article['title']} \n Brief: {article['description']} " for article in three_articles]
 
+# Send each article as a separate message via Twilio.
+account_sid = "AC39b6ca493feb968b2f527c00fd018bca"
+auth_token = "0e7c91ceafaf2f8c450d0ec01c7fe2e1"
 
-# Optional TODO: Format the message like this:
+client = Client(account_sid, auth_token)
+
+for article in formatted_articles:
+    message = client.messages.create(
+        from_='+15134079698',
+        to='+254715210571',
+        body= article
+    )
+# Format the message
 """
 TSLA: 🔺2%
 Headline: Were Hedge Funds Right About Piling Into Tesla Inc. (TSLA)?. 

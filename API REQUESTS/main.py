@@ -39,9 +39,25 @@ updated_date = date.strftime("%Y%m%d")
 print(updated_date)
 
 pixel_param = {
-    "date" : updated_date,
-    "quantity": "50"
+    "date": updated_date,
+    "quantity": input("How many kilometres did you run today?")
 }
 
-response = requests.post(pixel_endpoint, json=pixel_param, headers=headers)
+# response = requests.post(pixel_endpoint, json=pixel_param, headers=headers)
+# print(response.text)
+
+# UPDATING
+pixel_update_endpoint = f"{pixel_endpoint}/{updated_date}"
+
+updated_pixel = {
+    "quantity": "36"
+}
+
+response = requests.put(pixel_update_endpoint, json=updated_pixel, headers=headers)
 print(response.text)
+
+# # Deleting
+# pixel_delete_endpoint = f"{pixel_endpoint}/{updated_date}"
+#
+# response = requests.delete(pixel_delete_endpoint, headers=headers)
+# print(response.text)

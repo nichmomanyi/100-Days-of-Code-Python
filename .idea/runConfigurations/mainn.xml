@@ -1,0 +1,29 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="mainn" type="PythonConfigurationType" factoryName="Python">
+    <module name="100-Days-of-Code-Python" />
+    <option name="ENV_FILES" value="" />
+    <option name="INTERPRETER_OPTIONS" value="" />
+    <option name="PARENT_ENVS" value="true" />
+    <envs>
+      <env name="ENV_API_KEY" value="a4c20220ffe5424d1c5e253c680d77f1" />
+      <env name="ENV_APP_ID" value="ed62eded" />
+      <env name="ENV_Bearer_t" value="Bearer lukykgjfhdgfdgetekfdfgtihgf" />
+      <env name="ENV_exercise_endpoint" value="https://trackapi.nutritionix.com/v2/natural/exercise" />
+      <env name="ENV_sheet_endpoint" value="https://api.sheety.co/b6435ab822d11fc33c903cb8116f6d18/nicholasWorkouts/workouts" />
+      <env name="PYTHONUNBUFFERED" value="1" />
+    </envs>
+    <option name="SDK_HOME" value="" />
+    <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Exercise_tracking_app" />
+    <option name="IS_MODULE_SDK" value="true" />
+    <option name="ADD_CONTENT_ROOTS" value="true" />
+    <option name="ADD_SOURCE_ROOTS" value="true" />
+    <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Exercise_tracking_app/main.py" />
+    <option name="PARAMETERS" value="" />
+    <option name="SHOW_COMMAND_LINE" value="false" />
+    <option name="EMULATE_TERMINAL" value="false" />
+    <option name="MODULE_MODE" value="false" />
+    <option name="REDIRECT_INPUT" value="false" />
+    <option name="INPUT_FILE" value="" />
+    <method v="2" />
+  </configuration>
+</component>

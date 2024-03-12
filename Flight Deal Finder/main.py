@@ -1,11 +1,12 @@
 from datetime import datetime, timedelta
 from data_manager import DataManager
 from flight_search import FlightSearch
-
+from notification_manager import NotificationManager
 
 DM = DataManager()
 sheet_data = DM.get_destination_data()
 flight_search = FlightSearch()
+notification=NotificationManager()
 
 ORIGIN_CITY_IATA = "LON"
 

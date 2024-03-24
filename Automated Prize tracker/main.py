@@ -30,16 +30,16 @@ password = "vntfgxmruewsfcqy"
 title = soup.find(id="productTitle").get_text().strip()
 print(title)
 
-BUY_PRICE = 200
+BUY_PRICE = 15
 
 if price_as_float < BUY_PRICE:
     message = f"{title} is now {price}"
 
     with smtplib.SMTP("smtp.gmail.com", port=587) as connection:
         connection.starttls()
-        result = connection.login(YOUR_EMAIL, YOUR_PASSWORD)
+        result = connection.login(my_email, password)
         connection.sendmail(
-            from_addr=YOUR_EMAIL,
-            to_addrs=YOUR_EMAIL,
-            msg=f"Subject:Amazon Price Alert!\n\n{message}\n{url}".encode("utf-8")
+            from_addr=my_email,
+            to_addrs="nicholasmomanyi94@gmail.com",
+            msg=f"Subject:Amazon Price Alert!\n\n{message}\n{URL}".encode("utf-8")
         )

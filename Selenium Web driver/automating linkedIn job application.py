@@ -3,6 +3,9 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 import time
 
+ACCOUNT_EMAIL="nicholasmomanyi94@gmail.com"
+ACCOUNT_PASSWORD="nichdee254"
+
 chrome_options = webdriver.ChromeOptions()
 chrome_options.add_experimental_option("detach", True)
 
@@ -18,3 +21,13 @@ reject_button.click()
 time.sleep(2)
 sign_in_button = driver.find_element(by=By.LINK_TEXT, value="Sign in")
 sign_in_button.click()
+
+# Sign in
+time.sleep(5)
+email_field = driver.find_element(by=By.ID, value="username")
+email_field.send_keys(ACCOUNT_EMAIL)
+password_field = driver.find_element(by=By.ID, value="password")
+password_field.send_keys(ACCOUNT_PASSWORD)
+password_field.send_keys(Keys.ENTER)
+
+# You may be presented with a CAPTCHA - Solve the Puzzl

@@ -5,6 +5,7 @@ import time
 
 ACCOUNT_EMAIL="nicholasmomanyi94@gmail.com"
 ACCOUNT_PASSWORD="nichdee254"
+PHONE = "+254715210571"
 
 chrome_options = webdriver.ChromeOptions()
 chrome_options.add_experimental_option("detach", True)
@@ -22,12 +23,20 @@ time.sleep(2)
 sign_in_button = driver.find_element(by=By.LINK_TEXT, value="Sign in")
 sign_in_button.click()
 
-# Sign in
-time.sleep(5)
-email_field = driver.find_element(by=By.ID, value="username")
-email_field.send_keys(ACCOUNT_EMAIL)
-password_field = driver.find_element(by=By.ID, value="password")
-password_field.send_keys(ACCOUNT_PASSWORD)
-password_field.send_keys(Keys.ENTER)
+# You may be presented with a CAPTCHA - Solve the Puzzle Manually
+input("Press Enter when you have solved the Captcha")
 
-# You may be presented with a CAPTCHA - Solve the Puzzl
+#Locate the apply button
+time.sleep(5)
+apply_button = driver.find_element(by=By.CSS_SELECTOR, value=".jobs-s-apply button")
+apply_button.click()
+
+#If application requires phone number and the field is empty, then fill in the number.
+time.sleep(5)
+phone = driver.find_element(by=By.CSS_SELECTOR, value="input[id*=phoneNumber]")
+if phone.text == "":
+    phone.send_keys(PHONE)
+
+#Submit the application
+submit_button = driver.find_element(by=By.CSS_SELECTOR, value="footer button")
+submit_button.click()

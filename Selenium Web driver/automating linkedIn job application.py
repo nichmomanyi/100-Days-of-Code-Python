@@ -13,3 +13,8 @@ driver.get("https://www.linkedin.com/jobs/search/?f_LF=f_AL&geoId=102257491&keyw
 time.sleep(2)
 reject_button = driver.find_element(by=By.CSS_SELECTOR, value='button[action-type="DENY"]')
 reject_button.click()
+
+# Click Sign in Button
+time.sleep(2)
+sign_in_button = driver.find_element(by=By.LINK_TEXT, value="Sign in")
+sign_in_button.click()

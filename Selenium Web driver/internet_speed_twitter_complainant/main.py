@@ -18,6 +18,7 @@ class InternetSpeedTwitterBot:
 
     def get_internet_speed(self):
         self.driver.get("https://www.speedtest.net/")
+        self.up = self.driver.find_element(B)
 
     def tweet_at_provider(self):
         pass

@@ -2,7 +2,6 @@ import time
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium import webdriver
-import selenium
 
 PROMISED_UP = 5
 PROMISED_DOWN = 10

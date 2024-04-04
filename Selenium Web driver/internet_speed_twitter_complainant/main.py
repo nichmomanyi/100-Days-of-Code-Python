@@ -11,7 +11,6 @@ TWITTER_PASS = "nichdee254"
 chrome_options = webdriver.ChromeOptions()
 chrome_options.add_experimental_option("detach", True)
 
-
 class InternetSpeedTwitterBot:
     def __init__(self):
         self.driver = webdriver.Chrome(r"C:\Users\user\chromedriver", options=chrome_options)

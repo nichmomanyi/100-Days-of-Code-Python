@@ -51,6 +51,7 @@ class InternetSpeedTwitterBot:
         tweet_button = self.driver.find_element(By.XPATH, value='//*[@id="react-root"]/div/div/div[2]/main/div/div/div/div/div/div[2]/div/div[2]/div[1]/div/div/div/div[2]/div[4]/div/div/div[2]/div[3]')
         tweet_button.click()
 
+
         time.sleep(2)
         self.driver.quit()
 
